@@ -6,7 +6,7 @@ This plugin allows you to attach a counter to any input field that has a restric
 ### Usage
 
 	$("textarea").maxlength({
-		'showmax': true,		// shows maxlength in counter, default: false
-		'class': 'counter',		// defines class for counter
+		'showmax': true,				// shows maxlength in counter, default: false
+		'class': 'counter',				// defines class for counter
 		'text': 'characters remaining'	// attaches text to counter value
 	});
