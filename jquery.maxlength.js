@@ -6,9 +6,11 @@
 			var maxlength = $(this).attr('maxlength');
 			
 			if(maxlength !== undefined) {
+				var textfield = $(this);
 				var container = $('<div />', { 'class': params['class'] || '' }).insertAfter($(this));
-				
-				container.updateCounter = function(remainingCharacters) {
+				var updateCounter = function() {
+					var text = textfield.val();
+					var remainingCharacters = maxlength - text.length;
 					var counterString = remainingCharacters;
 
 					if(params['showmax'] == true) {
@@ -17,17 +19,12 @@
 
 					counterString += ' ' + (params['text'] || '');
 
-					$(this).text(counterString);
-				}
+					container.text(counterString);
+				};
+								
+				$(this).bind('keydown keyup keypress paste', updateCounter);
 
-				container.updateCounter(maxlength);
-				
-				$(this).bind('keydown keyup keypress paste', function() {
-					var text = $(this).val();
-					var remainingCharacters = maxlength - text.length;
-					
-					container.updateCounter(remainingCharacters);
-				});
+				updateCounter();
 			}
 			else {
 				throw "Element does not contain maxlength attribute";
