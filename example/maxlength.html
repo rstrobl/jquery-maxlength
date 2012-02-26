@@ -6,7 +6,7 @@
 	<script type="text/javascript" src="../jquery.maxlength.js"></script>
 	<script type="text/javascript">
 		$(function() {
-			$("textarea").maxlength({
+			$("[maxlength]").maxlength({
 				'showmax': true,
 				'class': 'counter',
 				'text': 'characters remaining'
@@ -16,6 +16,6 @@
 </head>
 <body>
 	<textarea maxlength="20"></textarea>
-	<textarea maxlength="150"></textarea>
+	<input maxlength="100" />
 </body>
 </html>
