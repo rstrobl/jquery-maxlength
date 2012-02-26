@@ -8,8 +8,8 @@
 			if(maxlength !== undefined) {
 				var container = $('<div />', { 'class': params['class'] || '' }).insertAfter($(this));
 				
-				container.updateCounter = function(remaining_characters) {
-					var counterString = remaining_characters;
+				container.updateCounter = function(remainingCharacters) {
+					var counterString = remainingCharacters;
 
 					if(params['showmax'] == true) {
 						counterString += ' / ' + maxlength;
@@ -24,9 +24,9 @@
 				
 				$(this).bind('keydown keyup keypress paste', function() {
 					var text = $(this).val();
-					var characters_remaining = maxlength - text.length;
+					var remainingCharacters = maxlength - text.length;
 					
-					container.updateCounter(characters_remaining);
+					container.updateCounter(remainingCharacters);
 				});
 			}
 			else {
