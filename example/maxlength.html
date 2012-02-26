@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show remaining characters</title>
+	<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="../jquery.maxlength.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("textarea").maxlength({
+				'showmax': true,
+				'class': 'counter',
+				'text': 'characters remaining'
+			});
+		});
+	</script>
+</head>
+<body>
+	<textarea maxlength="20"></textarea>
+	<textarea maxlength="150"></textarea>
+</body>
+</html>
