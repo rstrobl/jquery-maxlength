@@ -1,6 +1,6 @@
 (function($) {
 	$.fn.maxlength = function(params) {
-		params = params || {};
+		var params = params || {};
 		
 		this.each(function() {
 			var maxlength = $(this).attr('maxlength');
